@@ -1,0 +1,98 @@
+div.Student {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 1em;
+  justify-content: "space-between";
+  border: 1px solid black;
+  width: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+p.Student {
+  flex: 7;
+}
+
+button.Student {
+  flex: 2;
+  background-color: #f08080;
+  color: white; 
+  border: none;
+  border-radius: 5px;
+  height: 60%;
+}
+
+button.Student:hover {
+  cursor: pointer;
+}
+
+div.Students {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  overflow-y: scroll;
+}
+
+div.AddStudent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  height: 25%;
+  border: 1px solid black;
+}
+
+label.AddStudent {
+  align-self: flex-start;
+  margin-left: 2em;
+  margin-top: 1em;
+  font-size: medium;
+  color: #6d6d6d;
+}
+
+input.AddStudent {
+  width: 75%;
+  height: 15%;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.2em;
+  margin: 0.5em;
+}
+
+button.AddStudent {
+  width: 50%;
+  height: 10%;
+  background-color: #f08080;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  border-radius: 0.2em;
+  margin-bottom: 1em;
+}
+
+button.AddStudent:hover {
+  cursor: pointer;
+  background-color: #ffb6c1;
+}
+
+div.RemoveStudent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  flex: 0.5;
+  background-color: rgba(255, 0, 0, 0.596);
+  border-color: rgba(255, 0, 0, 0.596);
+  font-weight: bolder;
+  color: rgba(212, 21, 21, 0.788);
+  min-height: 60%;
+  margin: 0em 0.5em;
+}
+
+div.RemoveStudent:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.877);
+}
