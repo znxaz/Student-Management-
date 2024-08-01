@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 import Student from "./student";
-import './styles/global.css'
+import StudentContainer from "./StudentContainer";
+import "./styles/global.css";
 class Students extends Component {
   render() {
     return (
-      <>
-        {this.props.allData.map((element) => {
-          return (
+      <StudentContainer>
+        {this.props.allData.length === 0 ? (
+          <p>No Students To Display</p>
+        ) : (
+          this.props.allData.map((element) => (
             <div key={element.id} className="Students">
-              <Student full_name={element.full_name} id={element.id} addHandler={this.props.addHandler}></Student>
+              <Student
+                full_name={element.full_name}
+                id={element.id}
+                addHandler={this.props.addHandler}
+              />
             </div>
-          );
-        })}
-      </>
+          ))
+        )}
+      </StudentContainer>
     );
   }
 }

@@ -1,7 +1,17 @@
+div.StudentContainer{
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid whitesmoke;
+  width: 60%; 
+  min-height: 2em ;
+}
+
 div.Student {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1; 
   margin: 1em 1em;
   justify-content: "space-between";
   border: 1px solid black;
