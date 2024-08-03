@@ -7,7 +7,7 @@ class Student extends Component {
   };
   render() {
     return (
-      <div className="Student" key={this.props.key}>
+      <div className="Student" key={this.props.id}>
         <p className="Student">{this.props.full_name}</p>
         <button onClick={() => this.ChangeNameHandler()} className="Student">Change Name</button>
 

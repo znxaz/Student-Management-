@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import Student from "./student";
 import StudentContainer from "./StudentContainer";
 import "./styles/global.css";
+
 class Students extends Component {
   render() {
     return (
       <StudentContainer>
         {this.props.allData.length === 0 ? (
-          <p>No Students To Display</p>
+          <p className="Students">No Students To Display</p>
         ) : (
           this.props.allData.map((element) => (
             <div key={element.id} className="Students">

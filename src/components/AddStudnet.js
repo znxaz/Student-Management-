@@ -17,6 +17,7 @@ class AddStudent extends Component {
 
   addStudent = () => {
     this.props.addHandler(this.state);
+    this.setState({first_name: "", last_name: "", full_name: " "})
   };
 
   render() {

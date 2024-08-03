@@ -1,21 +1,25 @@
-div.StudentContainer{
-  background-color: white;
+div.StudentContainer {
+  /* display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; */
+  background-color: white;
   border: 1px solid whitesmoke;
-  width: 60%; 
-  min-height: 2em ;
+  width: 60%;
+  height: 90%;
+  min-height: 2em;
+  overflow-y: scroll;
+  position:relative;
 }
 
 div.Student {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1; 
   margin: 1em 1em;
   justify-content: "space-between";
   border: 1px solid black;
-  width: auto;
+  width: 100%;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   width: 100%;
@@ -28,7 +32,7 @@ p.Student {
 button.Student {
   flex: 2;
   background-color: #f08080;
-  color: white; 
+  color: white;
   border: none;
   border-radius: 5px;
   height: 60%;
@@ -39,11 +43,17 @@ button.Student:hover {
 }
 
 div.Students {
-  width: 50%;
   display: flex;
   justify-content: space-around;
   align-content: center;
-  overflow-y: scroll;
+}
+
+p.Students {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  padding: 1em; 
 }
 
 div.AddStudent {
@@ -106,3 +116,42 @@ div.RemoveStudent:hover {
   cursor: pointer;
   background-color: rgba(255, 0, 0, 0.877);
 }
+
+div.DeleteMessageContainer {
+  width: 100vw; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(179, 167, 167, 0.205);
+  border-radius: 7px;
+  z-index: 10;
+  position: fixed;
+}
+
+div.DeleteMessage{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 6px;
+}
+
+h3.DeleteMessage{
+  font-weight: bolder;
+  flex: 1 1 100%; 
+}
+
+button.YesButton{
+background-color: whitesmoke;
+border: 1px solid black; 
+border-radius: 10px;
+padding: 0.5em;
+}
+
+button.CancelButton{
+  background-color: rgba(255, 0, 0, 0.877) ;
+  border: 1px solid black; 
+  border-radius: 10px;
+  padding: 0.5em;
+  }
