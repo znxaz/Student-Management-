@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 import RemoveStudent from "./RemoveStudent";
 class Student extends Component {
-  ChangeNameHandler = () => {
-    //setState accepts 2 parameters, the values to set and an arrow function
-    this.setState({ name: "mow" });
-  };
+  ChangeNameHandler = () => {};
   render() {
     return (
       <div className="Student" key={this.props.id}>
         <p className="Student">{this.props.full_name}</p>
-        <button onClick={() => this.ChangeNameHandler()} className="Student">Change Name</button>
-
+        <button onClick={() => this.ChangeNameHandler()} className="Student">
+          Change Name
+        </button>
+        {this.props.changeName && (
+          <changeName addHandler={this.props.changeName}></changeName>
+        )}
         <RemoveStudent
           id={this.props.id}
           addHandler={this.props.addHandler}
-          style={{flex:1}}
+          style={{ flex: 1 }}
         ></RemoveStudent>
       </div>
     );
