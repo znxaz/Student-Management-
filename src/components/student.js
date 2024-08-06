@@ -15,7 +15,6 @@ class Student extends Component {
         <RemoveStudent
           id={this.props.id}
           addHandler={this.props.addHandler}
-          style={{ flex: 1 }}
         ></RemoveStudent>
       </div>
     );

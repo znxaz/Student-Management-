@@ -15,7 +15,7 @@ class Students extends Component {
               <Student
                 full_name={element.full_name}
                 id={element.id}
-                addHandler={this.props.addHandler}
+                addHandler={this.props.handleDeleteMessage}
               />
             </div>
           ))

@@ -1,58 +1,49 @@
 import "./App.css";
-import AddStudnet from "./components/AddStudnet";
+import AddStudent from "./components/AddStudnet";
 import Students from "./components/students";
 import DeleteMessage from "./components/DeleteMessage";
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
-import changeName from "./components/changeName";
 
 class App extends Component {
   state = {
     data: [],
-    deleteStudent: false,
-    changeName: false, 
+    deleteStudent: null, // Store the student ID to be deleted
   };
 
   addStudent = (user) => {
     user.id = uuidv4();
     const newData = [...this.state.data, user];
-    //setState accepts 2 parameters, the values to set and an arrow function
-    this.setState({ data: newData }, () => {});
+    this.setState({ data: newData });
   };
 
-  handleDeleteMessage = () => {
-    this.setState({ deleteStudent: !this.state.deleteStudent });
+  handleDeleteMessage = (studentId) => {
+    this.setState({ deleteStudent: studentId });
   };
 
-  removeStudent = (studentId) => {
+  removeStudent = () => {
     this.setState({
-      data: this.state.data.filter((student) => student.id !== studentId),
+      data: this.state.data.filter((student) => student.id !== this.state.deleteStudent),
+      deleteStudent: null, // Reset the deleteStudent state
     });
   };
 
-  changeNameHandler = () => {
-    this.state.setState({changeName: true});
+  cancelDelete = () => {
+    this.setState({ deleteStudent: null });
   };
 
   render() {
     return (
       <>
-      <div className="App">
-        <AddStudnet
-          addHandler={(userData) => {
-            this.addStudent(userData);
-          }}
-        ></AddStudnet>
-        <Students
-          allData={this.state.data}
-          addHandler={() => this.handleDeleteMessage()}
-          changeNameHandler={() => this.changeNameHandler()}
-        ></Students>
-      </div>
-      {this.state.deleteStudent && (
+        <div className="App">
+          <AddStudent addHandler={this.addStudent} />
+          <Students allData={this.state.data} handleDeleteMessage={this.handleDeleteMessage} />
+        </div>
+        {this.state.deleteStudent && (
           <DeleteMessage
-            addHandler={(studentId) => this.removeStudent(studentId)}
-          ></DeleteMessage>
+            removeStudent={this.removeStudent}
+            cancelDelete={this.cancelDelete}
+          />
         )}
       </>
     );
